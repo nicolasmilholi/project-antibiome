@@ -1,11 +1,11 @@
-import Imagem from "../Components/header";
-import ParagraphsBlock from "../components/paragraphs";
-import Icons from "../Components/Icons";
+import Imagem from "../components/globalComponents/image";
+import ParagraphsSection from "../components/globalComponents/paragraphs";
+import Information from "../components/Information";
 
 import BannerHero from "../public/banner-hero.png"
 import Informations from "../public/informations.png"
-import Cards from "../components/cards";
-import Discoveries from "../components/discoveries";
+import Products from "../components/products";
+import Discoveries from "../components/articles";
 
 export default function Home() {
 
@@ -32,14 +32,18 @@ export default function Home() {
       <Imagem
         imagePath={BannerHero}
       />
-      <ParagraphsBlock
+      <ParagraphsSection
         structure={structureSectionTwo}
       />
-      <Icons />
-      <ParagraphsBlock
+
+      <Information />
+
+      <ParagraphsSection
         structure={structureSectionOne}
       />
-      <Cards />
+
+      <Products />
+
       <Imagem
         imagePath={Informations}
       />

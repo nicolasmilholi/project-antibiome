@@ -13,7 +13,11 @@ const Card = ({ cardDetails }) => {
                                 <p className="text-[#7B7070] py-9 px-9">
                                     {item.description}
                                 </p>
-                                <p className={`container flex flex-col h-12 rounded-b-md font-medium text-white items-center justify-center ${item.color}`}>{item.title}</p>
+                                {
+                                    item.title && (
+                                        <p className={`container flex flex-col h-12 rounded-b-md font-medium text-white items-center justify-center ${item.color}`}>{item.title}</p>
+                                    )
+                                }
                             </div>
                         )
                     })

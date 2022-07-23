@@ -28,6 +28,7 @@ const navItems = [
     subItems: []
   },
 ]
+
 function navList(options) {
   return (
     <ul className="flex flex-col mt-4 md:flex-row md:space-x-20 md:mt-0  ">
@@ -56,9 +57,6 @@ function navList(options) {
 const navbar = () => {
   return (
     <div>
-      {/**
-       * HEADER GERAL
-       */}
       <div className="bg-gray-100 ">
         <div className="container mx-auto lg:flex lg:flex-row justify-center items-center space-y-2  text-gray-500 w-full">
           <div className="lg:flex lg:flex-row flex flex-col justify-center items-center space-x-12 lg:space-y-0 space-y-2">
@@ -71,9 +69,6 @@ const navbar = () => {
           </div>
         </div>
       </div>
-      {/**
-       * NAV BAR
-       */}
       <nav className="h-10 py-1.5 bg-[#389CD6]">
         <div className="container flex flex-wrap justify-center items-center mx-auto">
           <div
