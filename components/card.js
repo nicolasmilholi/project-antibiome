@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Card = ({ cardDetails }) => {
     return (
-        <div>
+        <>
             {
                 cardDetails && (
                     cardDetails.map((item, index) => {
@@ -13,7 +13,7 @@ const Card = ({ cardDetails }) => {
                                 <p className="text-[#7B7070] py-9 px-9">
                                     {item.description}
                                 </p>
-                                <p className={`container flex flex-col h-12 rounded-b-md font-medium text-white items-center justify-center' + {bg-[${item.color}]`}>{item.title}</p>
+                                <p className={`container flex flex-col h-12 rounded-b-md font-medium text-white items-center justify-center ${item.color}`}>{item.title}</p>
                             </div>
                         )
                     })
@@ -21,7 +21,7 @@ const Card = ({ cardDetails }) => {
 
                 )
             }
-        </div >
+        </>
     );
 };
 export default Card;
