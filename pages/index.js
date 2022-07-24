@@ -7,6 +7,7 @@ import Informations from "../public/informations.png"
 import Products from "../components/products";
 import Discoveries from "../components/articles";
 import More from "../components/more";
+import Footer from "../components/footer";
 
 export default function Home() {
 
@@ -51,6 +52,8 @@ export default function Home() {
       <Discoveries />
 
       <More/>
+
+      <Footer/>
     </div>
   );
 }
