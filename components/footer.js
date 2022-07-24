@@ -33,7 +33,7 @@ const Footer = () => {
     return (
         <div>
             <div className="bg-[#389CD6] py-10 px-20">
-                <div className="container flex flex-wrap justify-center items-center mx-auto">
+                <div className="flex flex-wrap justify-center items-center mx-auto">
                     <div className="justify-between items-center w-full md:flex md:w-auto md:order-1">
                         {navList(footerItems)}
                     </div>

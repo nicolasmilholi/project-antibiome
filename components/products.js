@@ -27,16 +27,18 @@ const Cards = () => {
   ]
 
   return (
-    <div className="flex flex-col items-center justify-center">
-    <div className="text-center">
-    <p className="text-2xl font-bold text-[#389CD6] pl-96 pr-96">Our products</p>
-    </div>
-      <div className="container mx-auto lg:grid lg:grid-cols-6 gap-6 py-12 px-12 pl-44 pr-44 items-center place-content-center justify-center">
-        <Card
-          cardDetails={cardsDetails}
-        />
+    <>
+      <div className="text-center">
+        <p className="text-2xl font-bold text-[#389CD6] px-0 sm:px-96">Our products</p>
       </div>
-  </div>
+      <div className="flex flex-nowrap overflow-x-auto md:flex-col md:items-center md:justify-center">
+        <div className="flex md:grid md:grid-cols-6 gap-6 py-12 px-10 sm:px-44 items-center justify-center">
+          <Card
+            cardDetails={cardsDetails}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 export default Cards;

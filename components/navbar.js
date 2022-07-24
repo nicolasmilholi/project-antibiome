@@ -39,7 +39,7 @@ function navList(options) {
               <Link href={item.path}>
                 <a
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-white md:p-0 "
+                  className="py-2 pr-4 pl-3 text-white md:p-0 inline-flex items-center justify-center"
                   aria-current="page"
                 >
                   {item.title}
@@ -57,11 +57,11 @@ function navList(options) {
   )
 }
 
-const navbar = () => {
+const navbarTeste = () => {
   return (
     <div>
       <div className="bg-gray-100 ">
-        <div className="container mx-auto lg:flex lg:flex-row justify-center items-center space-y-2  text-gray-500 w-full">
+        <div className="mx-auto lg:flex lg:flex-row justify-center items-center space-y-2  text-gray-500 w-full">
           <div className="lg:flex lg:flex-row flex flex-col justify-center items-center space-x-12 lg:space-y-0 space-y-2">
             <div className="flex flex-row space-x-2">
               <Image src={Logo} alt="Logo" />
@@ -73,7 +73,7 @@ const navbar = () => {
         </div>
       </div>
       <nav className="h-10 py-1.5 bg-[#389CD6]">
-        <div className="container flex flex-wrap justify-center items-center mx-auto">
+        <div className="flex flex-wrap justify-center items-center mx-auto">
           <div
             className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
             id="mobile-menu-4"
@@ -87,4 +87,4 @@ const navbar = () => {
 };
 
 
-export default navbar;
+export default navbarTeste;
