@@ -3,8 +3,15 @@
 
 [Intibiome Project](https://project-intibiome.vercel.app/)
 
+-----
+
 ## Getting Started
 
+#### About 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+-----
+#### Starting
 First, run the development server:
 
 ```bash
@@ -22,11 +29,15 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+-----
+
 ## What will be rendered
 
 
 
 https://user-images.githubusercontent.com/45269549/180888595-09e1f74c-c79b-4b2f-a9c2-a846614a9527.mp4
+
+-----
 
 ## Analytics
 
