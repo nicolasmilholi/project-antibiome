@@ -1,135 +1,142 @@
-/* This example requires Tailwind CSS v2.0+ */
+import { useState } from "react";
+import { VscSearch } from "react-icons/vsc";
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import {
     BookmarkAltIcon,
-    CalendarIcon,
-    ChartBarIcon,
-    CursorClickIcon,
-    MenuIcon,
-    PhoneIcon,
-    PlayIcon,
-    RefreshIcon,
+    BriefcaseIcon,
+    DesktopComputerIcon,
+    GlobeAltIcon,
+    InformationCircleIcon,
+    NewspaperIcon,
+    OfficeBuildingIcon,
     ShieldCheckIcon,
-    SupportIcon,
-    ViewGridIcon,
-    XIcon,
+    UserGroupIcon,
 } from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import Image from "next/image";
+import Logo from "../public/logo.png";
 
-const solutions = [
+const navOptions = [
     {
-        name: 'Analytics',
-        description: 'Get a better understanding of where your traffic is coming from.',
-        href: '#',
-        icon: ChartBarIcon,
+        title: "about us",
+        subOptions: ['brand philosophy', 'product technology']
     },
     {
-        name: 'Engagement',
-        description: 'Speak directly to your customers in a more meaningful way.',
-        href: '#',
-        icon: CursorClickIcon,
-    },
-    { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-    {
-        name: 'Integrations',
-        description: "Connect with third-party tools that you're already using.",
-        href: '#',
-        icon: ViewGridIcon,
+        title: "our products",
+        subOptions: ['all products', 'intibiome wellness', 'intibiome active', 'intibiome agecare']
     },
     {
-        name: 'Automations',
-        description: 'Build strategic funnels that will drive your customers to convert',
-        href: '#',
-        icon: RefreshIcon,
-    },
-]
-const callsToAction = [
-    { name: 'Watch Demo', href: '#', icon: PlayIcon },
-    { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
-    {
-        name: 'Help Center',
-        description: 'Get all of your questions answered in our forums or contact support.',
-        href: '#',
-        icon: SupportIcon,
+        title: "intimate health",
+        subOptions: ['article 1', 'article 2', 'article 3', 'faq']
     },
     {
-        name: 'Guides',
-        description: 'Learn how to maximize our platform to get the most out of it.',
-        href: '#',
-        icon: BookmarkAltIcon,
-    },
-    {
-        name: 'Events',
-        description: 'See what meet-ups and other events we might be planning near you.',
-        href: '#',
-        icon: CalendarIcon,
-    },
-    { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
-]
-const recentPosts = [
-    { id: 1, name: 'Boost your conversion rate', href: '#' },
-    { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-    { id: 3, name: 'Improve your customer experience', href: '#' },
+        title: "contact us",
+    }
 ]
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+export default function NavBar() {
+    const [navbar, setNavbar] = useState(false);
 
-export default function Example() {
     return (
         <>
-        
-            <div className="relative flex justify-center md:justify-center md:space-x-10">
-                <div className="group">
-                    <button className="flex flex-row justify-center items-center w-full px-4 py-4 mt-2 bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4">
-                        <span>First Dropdown</span>
-                    </button>
-                    <div className="absolute z-10 hidden bg-grey-200 group-hover:grid">
-                        <div className="px-2 pt-0 pb-2 bg-[#9D8E8E] shadow-lg">
-                            <div className="relative grid w-full grid-cols-3 gap-4 md:grid-cols-1">
-                                <nav
-                                    className="relative grid px-4 py-8 bg-[#9D8E8E] sm:grid-cols-4 sm:gap-x-2 sm:py-2 sm:px-6 lg:px-8 xl:pr-12"
-                                    aria-labelledby="solutions-heading"
-                                >
-                                    <div>
-                                        <span className="text-sm font-sm tracking-wide text-white">brand philosophy</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-sm font-sm tracking-wide text-white">product technology</span>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
+            <div className="bg-white">
+                <div className="flex lg:flex-row justify-center items-center space-x-12 mx-auto lg:space-y-0 space-y-2">
+                    <div className="hidden md:block">
+                        <Image src={Logo} alt="Logo" />
                     </div>
-                </div>
-
-                <div className="group">
-                    <button className="flex flex-row justify-center items-center w-full px-4 py-4 mt-2 bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4">
-                        <span>Second Dropdown</span>
-                    </button>
-                    <div className="absolute z-10 hidden bg-grey-200 group-hover:grid">
-                        <div className="px-2 pt-0 pb-2 bg-[#9D8E8E] shadow-lg">
-                            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
-                                <nav
-                                    className="relative grid px-4 py-8 bg-[#9D8E8E] sm:grid-cols-4 sm:gap-x-2 sm:py-2 sm:px-6 lg:px-8 xl:pr-12"
-                                    aria-labelledby="solutions-heading"
-                                >
-                                    <div>
-                                        <span className="text-sm font-sm tracking-wide text-white">brand philosophy</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-sm font-sm tracking-wide text-white">product technology</span>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
+                    <div className="hidden md:block md:ml-30">
+                        <VscSearch />
                     </div>
                 </div>
             </div>
+            <nav className="w-full sm:bg-white lg:bg-[#389CD6] shadow">
+                <div className="justify-between sm:justify-center sm:bg-[#389CD6] px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+                    <div>
+                        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                            <div className="md:hidden">
+                                <button
+                                    className="p-2 text-gray-700 rounded-md outline-none"
+                                    onClick={() => setNavbar(!navbar)}
+                                >
+                                    {navbar ? (
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-6 h-6 text-gray-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                    ) : (
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-6 h-6 text-gray-600"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M4 6h16M4 12h16M4 18h16"
+                                            />
+                                        </svg>
+                                    )}
+                                </button>
+                            </div>
+                            <a className="sm:hidden" href="javascript:void(0)">
+                                <Image src={Logo} alt="Logo" />
+                            </a>
+                            <div className="sm:hidden">
+                                <VscSearch color="#7B7070" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                                }`}
+                        >
+                            <div className="overflow-hidden  space-x-12">
+                                {
+                                    navOptions.map((item, index) => {
+                                        return (
+                                            <>
+                                                <div key={index} className="group float-left overflow-hidden items-center">
+                                                    <button className="border-0 outline-0 pr-3.5 px-3 bg-inherit text-white m-0 inline-flex items-center justify-center">{item.title}
+                                                        {
+                                                            item.subOptions && (
+                                                                <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                                </svg>
+                                                            )
+                                                        }
+                                                    </button>
+                                                    {item.subOptions && (
+                                                        <div className="absolute hidden left-0 bg-[#9D8E8E] w-full z-10 space-x-12  pl-32 pb-3 pt-3  group-hover:block">
+                                                            {item.subOptions.map((item, index) => {
+                                                                return (<a key={index} className="float-left text-white no-underline hover:bg-[#eee]">{item}</a>)
+                                                            })}
+
+                                                        </div>
+                                                    )
+                                                    }
+                                                </div>
+                                            </>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </>
-    )
+    );
 }
