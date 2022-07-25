@@ -8,10 +8,13 @@
 First, run the development server:
 
 ```bash
-step 1. npm install
-step 2. npm run build
-step 3. npm run dev
+
+npm install - to install dependencies
+npm run build - to generate bundle
+npm run dev - to upload application in development environment
+
 # or
+
 yarn install
 yarn build
 yarn dev
