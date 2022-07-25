@@ -1,7 +1,7 @@
 
 ## Live Preview
 
-[Intibiome Project](https://project-antibiome.vercel.app/)
+[Intibiome Project](https://project-intibiome.vercel.app/)
 
 ## Getting Started
 
@@ -28,3 +28,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 https://user-images.githubusercontent.com/45269549/180888595-09e1f74c-c79b-4b2f-a9c2-a846614a9527.mp4
 
+## Analytics
+
+![image](https://user-images.githubusercontent.com/45269549/180891131-166d2c48-4876-4da5-a34a-71a4ffef8d8e.png)
