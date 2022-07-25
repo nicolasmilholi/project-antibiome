@@ -7,6 +7,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Meta />
+      <Example />
         <main>{children}</main>
     </>
   );
