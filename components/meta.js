@@ -14,8 +14,8 @@ const Meta = ({ title, keywords, description }) => {
 };
 
 Meta.defaultProps = {
-  title: "Home | AntiBiome",
-  keywords: "Antibiome, Project",
+  title: "Home | Intibiome",
+  keywords: "Intibiome, Project",
   description: "Test project of the The Brooklyn Brothers selection process",
 };
 

@@ -1,5 +1,5 @@
 {
-  "name": "antibiome-project",
+  "name": "intibiome-project",
   "private": true,
   "scripts": {
     "dev": "next dev",
