@@ -23,7 +23,7 @@ const Discoveries = () => {
   return (
     <>
       <div className="text-center">
-        <p className="text-2xl font-bold text-[#389CD6] px-10 sm:px-96">keep up to date with our discoveries</p>
+        <p className="text-2xl font-bold text-[#389CD6] px-10 sm:pt-12 sm:px-96">keep up to date with our discoveries</p>
       </div>
       <div className="flex flex-nowrap overflow-x-auto md:flex-col md:items-center md:justify-center">
         <div className="flex md:grid md:grid-cols-6 gap-6 py-12 px-10 sm:px-44 items-center justify-center">

@@ -57,6 +57,8 @@ export default function Home() {
       <Discoveries />
 
       <More/>
+
+      <Footer/>
     </>
   );
 }
