@@ -1,13 +1,13 @@
 import Navbar from "./navbar";
 
 import Meta from "./meta";
-import Example from "./newNavBar";
+import NavBar from "./navbar";
 
 export const Layout = ({ children }) => {
   return (
     <>
       <Meta />
-      <Example />
+      <NavBar />
         <main>{children}</main>
     </>
   );

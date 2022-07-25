@@ -1,90 +1,158 @@
-import Link from "next/link";
+import { useState } from "react";
+import { VscSearch } from "react-icons/vsc";
+
 import Image from "next/image";
 import Logo from "../public/logo.png";
 
-import {
-  VscSearch
-} from "react-icons/vsc";
-
-const navItems = [
-  {
-    title: 'About us',
-    path: '/',
-    subItems: []
-  },
-  {
-    title: 'Our Products',
-    path: '/',
-    subItems: []
-  },
-  {
-    title: 'Intimate Helth',
-    path: '/',
-    subItems: []
-  },
-  {
-    title: 'Contact us',
-    path: '/',
-    subItems: []
-  },
+const navWebOptions = [
+    {
+        title: "about us",
+        subOptions: ['brand philosophy', 'product technology']
+    },
+    {
+        title: "our products",
+        subOptions: ['all products', 'intibiome wellness', 'intibiome active', 'intibiome agecare']
+    },
+    {
+        title: "intimate health",
+        subOptions: ['article 1', 'article 2', 'article 3', 'faq']
+    },
+    {
+        title: "contact us",
+    }
 ]
 
-function navList(options) {
-  return (
-    <ul className="flex flex-col mt-4 md:flex-row md:space-x-20 md:mt-0  ">
-      {(
-        options.map((item, index) => {
-          return (
-            <li key={index}>
-              <Link href={item.path}>
-                <a
-                  href="#"
-                  className="py-2 pr-4 pl-3 text-white md:p-0 inline-flex items-center justify-center"
-                  aria-current="page"
-                >
-                  {item.title}
-                      <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                </a>
-              </Link>
-            </li>
-          )
-        })
-      )
-      }
-    </ul>
-  )
+const navMobileOptions = [
+    'about us',
+    'brand philosophy',
+    'product technology',
+    'our products',
+    'all products',
+    'intibiome wellness',
+    'intibiome active',
+    'intibiome agecare',
+    "intimate health",
+    'article 1',
+    'article 2',
+    'article 3',
+    'faq',
+    'contact us',
+]
+
+export default function NavBar() {
+    const [navbar, setNavbar] = useState(false);
+
+    return (
+        <>
+            <div className="bg-white">
+                <div className="flex lg:flex-row justify-center items-center space-x-12 mx-auto lg:space-y-0 space-y-2">
+                    <div className="hidden md:block">
+                        <Image src={Logo} alt="Logo" />
+                    </div>
+                    <div className="hidden md:block md:ml-30">
+                        <VscSearch />
+                    </div>
+                </div>
+            </div>
+            <nav className="w-full sm:bg-white lg:bg-[#389CD6] shadow">
+                <div className="justify-between sm:justify-center sm:bg-[#389CD6] px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+                    <div>
+                        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                            <div className="md:hidden">
+                                <button
+                                    className="p-2 text-gray-700 rounded-md outline-none"
+                                    onClick={() => setNavbar(!navbar)}
+                                >
+                                    {navbar ? (
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-6 h-6 text-gray-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                    ) : (
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-6 h-6 text-gray-600"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M4 6h16M4 12h16M4 18h16"
+                                            />
+                                        </svg>
+                                    )}
+                                </button>
+                            </div>
+                            <a className="sm:hidden">
+                                <Image src={Logo} alt="Logo" />
+                            </a>
+                            <div className="sm:hidden">
+                                <VscSearch color="#7B7070" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                                }`}
+                        >
+                                <ul className="absolute left-0 w-full h-full pl-10 -mt-10 bg-[#389CD6] grid items-center justify-start z-10 sm:hidden">
+                                    {
+                                        navMobileOptions.map((item, index) => {
+                                            return (
+                                                    <li key={index} className="text-white" >
+                                                        <a >{item}</a>
+                                                    </li>
+                                            )
+                                        })
+                                    }
+
+                                </ul>
+
+                            <div className="overflow-hidden invisible sm:visible space-x-12">
+                                {
+                                    navWebOptions.map((item, index) => {
+                                        return (
+                                            <div key={index} className="group float-left overflow-hidden items-center">
+                                                <button className="border-0 outline-0 pr-3.5 px-3 bg-inherit text-white m-0 inline-flex items-center justify-center">{item.title}
+                                                    {
+                                                        item.subOptions && (
+                                                            <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                            </svg>
+                                                        )
+                                                    }
+                                                </button>
+                                                {item.subOptions && (
+                                                    <div className="absolute hidden left-0 bg-[#9D8E8E] w-full z-10 space-x-12  pl-32 pb-3 pt-3  group-hover:block">
+                                                        {item.subOptions.map((item, indexY) => {
+                                                            return (<a key={indexY} className="float-left text-white no-underline hover:bg-[#eee]">{item}</a>)
+                                                        })}
+
+                                                    </div>
+                                                )
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </>
+    );
 }
-
-const navbarTeste = () => {
-  return (
-    <div>
-      <div className="bg-gray-100 ">
-        <div className="mx-auto lg:flex lg:flex-row justify-center items-center space-y-2  text-gray-500 w-full">
-          <div className="lg:flex lg:flex-row flex flex-col justify-center items-center space-x-12 lg:space-y-0 space-y-2">
-            <div className="flex flex-row space-x-2">
-              <Image src={Logo} alt="Logo" />
-            </div>
-            <div className="flex flex-row space-x-10">
-              <VscSearch />
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav className="h-10 py-1.5 bg-[#389CD6]">
-        <div className="flex flex-wrap justify-center items-center mx-auto">
-          <div
-            className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-            id="mobile-menu-4"
-          >
-            {navList(navItems)}
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-};
-
-
-export default navbarTeste;

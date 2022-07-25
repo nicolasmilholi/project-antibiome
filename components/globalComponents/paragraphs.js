@@ -10,11 +10,9 @@ function Paragraphs({ structure }) {
               structure.paragraphs && (
                 structure.paragraphs.map((item, index) => {
                   return (
-                    <div key={index}>
-                      <p className={`text-[#7B7070] px-26 sm:${structure.padding} pb-4`}>
+                      <p key={index} className={`text-[#7B7070] px-26 sm:px-72 pb-4`}>
                         {item}
                       </p>
-                    </div>
                   )
                 })
               )

@@ -17,7 +17,6 @@ export default function Home() {
 
   const structureSectionOne = {
     title: 'were here to help',
-    padding: 'px-96',
     paragraphs: [
       "When it comes to caring for our most intimate areas, we`ve lost our connection",
       "Embarrassed, unwilling, or unable to communicate with others, we`re needlessly neglecting the parts of our bodies that need it most.",
@@ -27,7 +26,6 @@ export default function Home() {
 
   const structureSectionTwo = {
     title: 'whatever your age. whatever your lifestyle. whatever your interests.',
-    padding: 'px-72',
     paragraphs: [
       "Co-created with gynaecologists, our revolutionary products have been expertly developed to support your intimate microbiome and pH balance, and strengthen overall natural health.",
       "As the experts in intimate hygiene, we want to bring discussion about intimate wellness care out of the dark and demystify the taboos that surround it."
